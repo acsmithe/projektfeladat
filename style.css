@@ -413,3 +413,10 @@ section.blokk { margin-bottom: 48px; }
   .hely-1, .hely-2, .hely-3 { order: 0; min-height: 220px; }
   .allas { font-size: 0.85rem; }
 }
+
+.csapat-logo {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;   /* a szöveg közepéhez igazítja */
+  margin-right: 8px;        /* hely a logó és a szöveg között */
+}
