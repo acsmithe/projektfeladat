@@ -334,3 +334,82 @@ section.blokk { margin-bottom: 48px; }
   margin-top: 16px;
 }
 
+
+.dobogo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: end;            
+  margin: 24px 0 32px;
+}
+
+.dobogo-kartya {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.dobogo-kartya:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+}
+
+
+.hely-1 { order: 2; min-height: 340px; }
+.hely-2 { order: 1; min-height: 300px; }
+.hely-3 { order: 3; min-height: 260px; }
+
+
+.mercedes { background: linear-gradient(135deg, #00796b 0%, #1de9c5 100%); }
+.ferrari  { background: linear-gradient(135deg, #5c0000 0%, #e10600 100%); }
+
+.dobogo-kartya > div { position: relative; z-index: 1; max-width: 60%; }
+
+.helyezes { font-size: 2.2rem; font-weight: bold; font-style: italic; }
+.helyezes sup { font-size: 0.9rem; }
+.pilota-nev { font-size: 1.3rem; margin-top: 4px; }
+.pilota-nev strong { font-weight: 700; }
+.pilota-csapat { font-size: 0.95rem; opacity: 0.9; }
+.zaszlo-kicsi { font-size: 1.6rem; margin-top: 10px; }
+
+.pontok {
+  margin-top: auto;           
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+.pontok small { font-size: 0.9rem; }
+
+.dobogo-kartya img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 92%;
+  width: auto;
+  max-width: 55%;
+  object-fit: contain;
+  object-position: bottom right;
+}
+
+.allas td:first-child { font-weight: bold; }
+.allas td:last-child,
+.allas th:last-child { text-align: right; }
+
+.pont {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@media (max-width: 700px) {
+  .dobogo { grid-template-columns: 1fr; }
+  .hely-1, .hely-2, .hely-3 { order: 0; min-height: 220px; }
+  .allas { font-size: 0.85rem; }
+}
