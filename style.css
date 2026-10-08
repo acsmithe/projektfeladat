@@ -174,13 +174,14 @@ section.blokk { margin-bottom: 48px; }
 .lepesek li:hover { transform: translateX(12px); }
 
 .zaszlok {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
+  gap: 26px;
   margin-top: 16px;
 }
 .zaszlo { text-align: center; }
 .zaszlo .minta {
+  width: 300px;
   height: 70px;
   border-radius: 4px;
   border: 1px solid #999;
@@ -188,7 +189,7 @@ section.blokk { margin-bottom: 48px; }
   transition: transform 0.4s;
   transform-origin: left center;
 }
-.zaszlo:hover .minta { transform: perspective(300px) rotateY(-25deg) scale(1.05); }
+.zaszlo:hover .minta { transform: scale(1.08); }
 .zold   { background: #1fa843; }
 .sarga  { background: #ffd800; }
 .pirosz { background: #e10600; }
