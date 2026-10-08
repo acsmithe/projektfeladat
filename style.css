@@ -31,7 +31,6 @@ header {
 }
 
 
-
 .logo {
   color: white;
   font-size: 1.6rem;
@@ -52,18 +51,34 @@ nav a:hover { background: var(--piros); transform: translateY(-2px); }
 nav a.aktiv { border-bottom: 3px solid var(--piros); }
 
 .hero {
-  background: var(--sotet);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
   color: white;
   text-align: center;
   padding: 80px 20px;
-  overflow: hidden;
+  overflow: hidden; 
+
+
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("https://r.testifier.nl/Acbs8526SDKI/resizing_type:fill/width:1200/height:630/plain/https://s3-newsifier.ams3.digitaloceanspaces.com/grandprix247.com/images/2026-05/kimiantonelli-mercedesamgpetronasf1teamw17-6a0d839731dae.jpg") center / cover no-repeat;
 }
+
 .hero h1 {
-  font-size: 3rem;
+  font-size: 9rem;
   font-style: italic;
-  animation: beusz 1.2s ease-out;
+  animation: raCsuszik 1.2s ease-out;
 }
-.hero p { margin-top: 12px; color: #ccc; }
+
+@keyframes raCsuszik {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+.hero p { margin-top: 12px; color: #ccc; font-size: 1.2rem; }
 
 .auto {
   font-size: 3rem;
