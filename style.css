@@ -80,13 +80,6 @@ nav a.aktiv { border-bottom: 3px solid var(--piros); }
 
 .hero p { margin-top: 12px; color: #ccc; font-size: 1.2rem; }
 
-.auto {
-  font-size: 3rem;
-  margin-top: 30px;
-  display: inline-block;
-  animation: hajtas 6s linear infinite;
-}
-
 main { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
 h2 { margin-bottom: 16px; border-left: 6px solid var(--piros); padding-left: 12px; }
 p { margin-bottom: 12px; }
@@ -126,15 +119,100 @@ footer {
   overflow: hidden;
 }
 
+.palya {
+  position: relative;
+  max-width: 700px;
+  margin: 24px auto 0;
+}
+
+.sav {
+  position: relative;
+  height: 56px;
+  margin-right: 14px;                 
+  border-bottom: 2px dashed var(--szurke);
+}
+
+.auto,
+.auto2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.auto  { animation: verseny1 17s linear infinite; }
+.auto2 { animation: verseny2 17s linear infinite; }
+
+footer img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+.auto2 img { filter: hue-rotate(180deg); }  
+
+
+.cel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  background: conic-gradient(#111 25%, #fff 0 50%, #111 0 75%, #fff 0) 0 0 / 14px 14px;
+}
+
+
+.lampak {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.lampa {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: #3a0000;                
+  animation-duration: 17s;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-end; 
+}
+.l1 { animation-name: lampa1; }
+.l2 { animation-name: lampa2; }
+.l3 { animation-name: lampa3; }
+.l4 { animation-name: lampa4; }
+.l5 { animation-name: lampa5; }
+
+@keyframes lampa1 {
+  0%     { background: #3a0000; box-shadow: none; }
+  5.88%  { background: #ff1a1a; box-shadow: 0 0 14px 4px rgba(255,26,26,0.8); }
+  41.18% { background: #3a0000; box-shadow: none; }
+}
+@keyframes lampa2 {
+  0%     { background: #3a0000; box-shadow: none; }
+  11.76% { background: #ff1a1a; box-shadow: 0 0 14px 4px rgba(255,26,26,0.8); }
+  41.18% { background: #3a0000; box-shadow: none; }
+}
+@keyframes lampa3 {
+  0%     { background: #3a0000; box-shadow: none; }
+  17.65% { background: #ff1a1a; box-shadow: 0 0 14px 4px rgba(255,26,26,0.8); }
+  41.18% { background: #3a0000; box-shadow: none; }
+}
+@keyframes lampa4 {
+  0%     { background: #3a0000; box-shadow: none; }
+  23.53% { background: #ff1a1a; box-shadow: 0 0 14px 4px rgba(255,26,26,0.8); }
+  41.18% { background: #3a0000; box-shadow: none; }
+}
+@keyframes lampa5 {
+  0%     { background: #3a0000; box-shadow: none; }
+  29.41% { background: #ff1a1a; box-shadow: 0 0 14px 4px rgba(255,26,26,0.8); }
+  41.18% { background: #3a0000; box-shadow: none; }
+}
+
 @keyframes beusz {
   from { opacity: 0; transform: translateY(-40px) scale(0.9); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@keyframes hajtas {
-  from { transform: translateX(-300px); }
-  to   { transform: translateX(300px); }
-}
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
@@ -144,6 +222,23 @@ footer {
   .hero h1 { font-size: 2rem; }
 }
 
+@keyframes verseny1 {
+  0%      { left: 0%;    transform: translateX(0%); }
+  41.18%  { left: 0%;    transform: translateX(0%); }      
+  50.59%  { left: 16.1%; transform: translateX(-16.1%); }
+  74.12%  { left: 56.5%; transform: translateX(-56.5%); }
+  88.24%  { left: 100%;  transform: translateX(-100%); }   
+  100%    { left: 100%;  transform: translateX(-100%); }
+}
+
+@keyframes verseny2 {
+  0%      { left: 0%;    transform: translateX(0%); }
+  41.18%  { left: 0%;    transform: translateX(0%); }
+  50.59%  { left: 9.7%;  transform: translateX(-9.7%); }
+  74.12%  { left: 66.1%; transform: translateX(-66.1%); }
+  88.24%  { left: 100%;  transform: translateX(-100%); }
+  100%    { left: 100%;  transform: translateX(-100%); }
+}
 
 section.blokk { margin-bottom: 48px; }
 
@@ -238,3 +333,4 @@ section.blokk { margin-bottom: 48px; }
   border-radius: 6px;
   margin-top: 16px;
 }
+
