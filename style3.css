@@ -351,19 +351,17 @@ section.blokk { margin-bottom: 48px; }
   display: table-row;
 }
 
-.tabla-keret {
-  overflow-x: visible;
-  margin-top: 16px;
+.tabla-keret { 
+  overflow-x: visible; 
+  margin-top: 16px; 
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  background: white; 
   table-layout: auto;
 }
-
-table { width: 100%; border-collapse: collapse; background: white; }
 th { background: var(--sotet); color: white; text-align: left; }
 th, td { padding: 12px; border-bottom: 1px solid #ddd; }
 tbody tr { transition: background 0.3s, transform 0.3s; }
@@ -508,4 +506,5 @@ footer img {
 @media (max-width: 700px) {
   .hero h1 { font-size: 2.2rem; }
   .naptar { font-size: 0.85rem; }
+  th, td { padding: 8px 6px; }
 }
