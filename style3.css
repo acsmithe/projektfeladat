@@ -1,0 +1,251 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --piros: #e10600;
+  --sotet: #15151e;
+  --szurke: #38384a;
+  --vilagos: #f5f5f7;
+}
+
+body {
+  background: var(--vilagos);
+  color: var(--sotet);
+  line-height: 1.6;
+  font-family: "Titillium Web", Arial, sans-serif;
+}
+
+header {
+  background: var(--sotet);
+  border-bottom: 4px solid var(--piros);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  flex-wrap: wrap;
+}
+
+.logo_kep img {
+  height: 50px;
+  margin: 10px 0;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 18px 16px;
+  transition: background 0.3s, transform 0.3s;
+}
+nav a:hover { background: var(--piros); transform: translateY(-2px); }
+nav a.aktiv { border-bottom: 3px solid var(--piros); }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("kepek/mclaren_mcl38_formula_1_2024_4k-original.jpg") center / cover no-repeat;
+}
+
+.hero-kicsi {
+  min-height: 300px;
+  padding: 70px 20px;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  font-style: italic;
+  animation: raCsuszik 1.2s ease-out;
+}
+
+@keyframes raCsuszik {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+.hero p { margin-top: 12px; color: #ccc; font-size: 1.2rem; }
+
+main { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+h2 { margin-bottom: 16px; border-left: 6px solid var(--piros); padding-left: 12px; }
+p { margin-bottom: 12px; }
+section.blokk { margin-bottom: 48px; }
+
+.szamok {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.szam {
+  background: var(--sotet);
+  color: white;
+  text-align: center;
+  padding: 24px 12px;
+  border-radius: 6px;
+  transition: transform 0.3s;
+}
+.szam:hover { transform: scale(1.08) rotate(2deg); }
+.szam strong { display: block; font-size: 2rem; color: var(--piros); }
+
+.info {
+  background: #fff3f2;
+  border: 1px solid var(--piros);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+.tabla-keret { overflow-x: auto; margin-top: 16px; }
+
+table { width: 100%; border-collapse: collapse; background: white; }
+th { background: var(--sotet); color: white; text-align: left; }
+th, td { padding: 12px; border-bottom: 1px solid #ddd; }
+tbody tr { transition: background 0.3s, transform 0.3s; }
+tbody tr:hover { background: #ffe5e3; transform: scale(1.01); }
+
+.naptar td:first-child { font-weight: bold; color: var(--piros); }
+.naptar td:nth-child(2) { white-space: nowrap; }
+.naptar .fi { margin-right: 8px; }
+
+.naptar tr.hazai { background: #fff3f2; border-left: 6px solid var(--piros); }
+.naptar tr.hazai td:nth-child(3) { font-weight: bold; }
+
+.sprint-jel {
+  display: inline-block;
+  background: var(--piros);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 1px 8px;
+  border-radius: 20px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+footer {
+  background: var(--sotet);
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.palya {
+  position: relative;
+  max-width: 700px;
+  margin: 24px auto 0;
+}
+
+.sav {
+  position: relative;
+  height: 56px;
+  margin-right: 14px;
+  border-bottom: 2px dashed var(--szurke);
+}
+
+.auto,
+.auto2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.auto  { animation: verseny1 17s linear infinite; }
+.auto2 { animation: verseny2 17s linear infinite; }
+
+footer img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+.auto2 img { filter: hue-rotate(180deg); }
+
+.cel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  background: conic-gradient(#111 25%, #fff 0 50%, #111 0 75%, #fff 0) 0 0 / 14px 14px;
+}
+
+.lampak {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.lampa {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: #3a0000;
+  animation-duration: 17s;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-end;
+}
+.l1 { animation-name: lampa1; }
+.l2 { animation-name: lampa2; }
+.l3 { animation-name: lampa3; }
+.l4 { animation-name: lampa4; }
+.l5 { animation-name: lampa5; }
+
+@keyframes lampa1 {
+  0%     { background: #3a0000; box-shadow: none; }
+  5.88%  { background: #ff1a1a; box-shadow: 0 0 14px 4px rgba(255,26,26,0.8); }
+  41.18% { background: #3a0000; box-shadow: none; }
+}
+@keyframes lampa2 {
+  0%     { background: #3a0000; box-shadow: none; }
+  11.76% { background: #ff1a1a; box-shadow: 0 0 14px 4px rgba(255,26,26,0.8); }
+  41.18% { background: #3a0000; box-shadow: none; }
+}
+@keyframes lampa3 {
+  0%     { background: #3a0000; box-shadow: none; }
+  17.65% { background: #ff1a1a; box-shadow: 0 0 14px 4px rgba(255,26,26,0.8); }
+  41.18% { background: #3a0000; box-shadow: none; }
+}
+@keyframes lampa4 {
+  0%     { background: #3a0000; box-shadow: none; }
+  23.53% { background: #ff1a1a; box-shadow: 0 0 14px 4px rgba(255,26,26,0.8); }
+  41.18% { background: #3a0000; box-shadow: none; }
+}
+@keyframes lampa5 {
+  0%     { background: #3a0000; box-shadow: none; }
+  29.41% { background: #ff1a1a; box-shadow: 0 0 14px 4px rgba(255,26,26,0.8); }
+  41.18% { background: #3a0000; box-shadow: none; }
+}
+
+@keyframes verseny1 {
+  0%      { left: 0%;    transform: translateX(0%); }
+  41.18%  { left: 0%;    transform: translateX(0%); }
+  50.59%  { left: 16.1%; transform: translateX(-16.1%); }
+  74.12%  { left: 56.5%; transform: translateX(-56.5%); }
+  88.24%  { left: 100%;  transform: translateX(-100%); }
+  100%    { left: 100%;  transform: translateX(-100%); }
+}
+
+@keyframes verseny2 {
+  0%      { left: 0%;    transform: translateX(0%); }
+  41.18%  { left: 0%;    transform: translateX(0%); }
+  50.59%  { left: 9.7%;  transform: translateX(-9.7%); }
+  74.12%  { left: 66.1%; transform: translateX(-66.1%); }
+  88.24%  { left: 100%;  transform: translateX(-100%); }
+  100%    { left: 100%;  transform: translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 700px) {
+  .hero h1 { font-size: 2.2rem; }
+  .naptar { font-size: 0.85rem; }
+}
