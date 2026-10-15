@@ -89,7 +89,7 @@
 }
 
 .gomb-elsodleges {
-  background: var(--piros) ;
+  background: var(--piros);
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(225, 6, 0, 0.35);
 }
@@ -126,10 +126,11 @@
   animation: beusz 0.8s ease-out;
   transition: transform 0.5s ease;
 }
-.hero-panel:hover{
-  
+
+.hero-panel:hover {
+
   transform: scale(1.05);
-  
+
 }
 
 .panel-fejlec {
@@ -198,7 +199,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
@@ -234,7 +235,8 @@
 .cimke-sotet {
   background: var(--sotet);
 }
-.cimke{
+
+.cimke {
   border-radius: 5px;
 }
 
@@ -247,20 +249,20 @@
   border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.bento-stat-sor  div {
+.bento-stat-sor div {
   display: flex;
   flex-direction: column;
   min-width: 120px;
 }
 
-.bento-stat-sor{
+.bento-stat-sor {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .bento-stat-sor strong {
-  
+
   font-size: 1.5rem;
   color: #ff4d47;
   font-style: italic;
@@ -312,12 +314,12 @@
   justify-content: center;
 }
 
-/* 6. CSAPAT- ÉS PILÓTAKÁRTYÁK (Flexbox 2 oszlopos elrendezés) */
-.csapat-logo-kartya{
-    background-color: rgba(0, 0, 0, 0.651);
-    padding: 5px;
-    border-radius: 999px;
-    height: 30px;
+
+.csapat-logo-kartya {
+  background-color: rgba(0, 0, 0, 0.651);
+  padding: 5px;
+  border-radius: 999px;
+  height: 30px;
 }
 
 .csapatok-grid {
@@ -394,4 +396,89 @@
   font-weight: 700;
   color: #555568;
   letter-spacing: 0.06em;
+}
+
+.pilota-paros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.kartya.pilota {
+  flex: 1 1 calc(50% - 7px);
+  box-sizing: border-box;
+  background: var(--vilagos);
+  border-top: 3px solid var(--sotet);
+  border-left: 3px solid var(--csapat-szin, var(--piros));
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+}
+
+.pilota-adatok {
+  position: relative;
+  z-index: 2;
+  width: 56%;
+  max-width: 56%;
+}
+
+.rajtszam {
+  display: inline-block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--sotet);
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--csapat-szin, var(--piros));
+}
+
+.pilota-nev-blokk {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pilota-nev-blokk div {
+  min-width: 0;
+}
+
+.pilota-nev-blokk .fi {
+  font-size: 1.25rem;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.pilota-nev-blokk strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--sotet);
+  line-height: 1.2;
+}
+
+.pilota-nev-blokk small {
+  display: block;
+  font-size: 0.8rem;
+  color: #4a4a5e;
+  margin-top: 2px;
+  overflow-wrap: anywhere;
+}
+
+.pilota-portre {
+  position: absolute;
+  right: 2px;
+  bottom: 0;
+  height: 94%;
+  width: auto;
+  max-width: 45%;
+  object-fit: contain;
+  object-position: bottom right;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
 }
