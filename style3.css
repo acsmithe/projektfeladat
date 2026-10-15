@@ -47,20 +47,25 @@ nav a.aktiv { border-bottom: 3px solid var(--piros); }
   color: white;
   text-align: center;
   overflow: hidden;
+  position: relative;
+  width: 100%;
+  
   background:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("kepek/mclaren_mcl38_formula_1_2024_4k-original.jpg") center 60% / cover no-repeat;
+    url("kepek/mclaren_mcl38_formula_1_2024_4k-original.jpg") center center / cover no-repeat;
 }
 
 .hero-kicsi {
-  height: 640px;
-  padding: 0 20px;
+  min-height: 50vh; 
+  padding: 60px 20px;
 }
 
 .hero h1 {
-  font-size: 5rem;
+  font-size: clamp(2.2rem, 8vw, 5rem);
   font-style: italic;
   animation: raCsuszik 1.2s ease-out, szinValtas 6s linear 1.2s infinite;
+  line-height: 1.1;
+  max-width: 90%;
 }
 
 @keyframes szinValtas {
@@ -75,7 +80,12 @@ nav a.aktiv { border-bottom: 3px solid var(--piros); }
   to   { transform: translateX(0);     opacity: 1; }
 }
 
-.hero p { margin-top: 12px; color: #ccc; font-size: 1.2rem; }
+.hero p {
+  margin-top: 12px;
+  color: #ccc;
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  max-width: 600px;
+}
 
 main { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
 h2 { margin-bottom: 16px; border-left: 6px solid var(--piros); padding-left: 12px; }
