@@ -57,7 +57,7 @@
 }
 
 .hero.hero-csapatok h1 span {
-  color: rgb(151, 0, 0);
+  color: var(--piros)
 }
 
 .hero.hero-csapatok p {
@@ -88,7 +88,7 @@
 }
 
 .gomb-elsodleges {
-  background: rgb(151, 0, 0);
+  background: var(--piros) ;
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(225, 6, 0, 0.35);
 }
@@ -123,6 +123,12 @@
   padding: 20px;
   border-radius: 6px;
   animation: beusz 0.8s ease-out;
+  transition: transform 0.5s ease;
+}
+.hero-panel:hover{
+  
+  transform: scale(1.05);
+  
 }
 
 .panel-fejlec {
@@ -147,4 +153,160 @@
 .panel-labsav {
   font-size: 1.1rem;
   margin-top: 10px;
+}
+
+
+.gorgetes-jelzo {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #d6d6e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.gorgetes-jelzo:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  transform: translateY(3px);
+}
+
+.csapatok-main {
+  max-width: 1160px;
+}
+
+.bento-racs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.bento-csempe {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+  border: 1px solid rgba(21, 21, 30, 0.08);
+  box-shadow: 0 4px 14px rgba(21, 21, 30, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.bento-csempe:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(21, 21, 30, 0.12);
+}
+
+
+.bento-7 {
+  max-width: calc((100% - 20px) * 7 / 12);
+}
+
+.bento-5 {
+  max-width: calc((100% - 20px) * 5 / 12);
+}
+
+
+.bento-4 {
+  max-width: calc((100% - 40px) / 3);
+}
+
+.bento-sotet {
+  background: linear-gradient(135deg, #22222b 0%, #353546 100%);
+  color: #ffffff;
+  border-top: 4px solid var(--piros);
+}
+
+.bento-sotet p {
+  color: #dcdce6;
+}
+
+.cimke-sotet {
+  background: var(--sotet);
+}
+.cimke{
+  border-radius: 5px;
+}
+
+.bento-stat-sor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.bento-stat-sor  div {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.bento-stat-sor{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.bento-stat-sor strong {
+  
+  font-size: 1.5rem;
+  color: #ff4d47;
+  font-style: italic;
+}
+
+.bento-stat-sor span {
+  font-size: 0.82rem;
+  color: #c9c9d6;
+}
+
+.motor-lista {
+  list-style: none;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.motor-sor {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  margin-bottom: 4px;
+}
+
+.motor-sav {
+  height: 7px;
+  background: #ececf1;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.motor-sav span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.bento-info-csempe {
+  padding: 16px;
+  justify-content: center;
+}
+
+.bento-info {
+  margin-top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
