@@ -46,22 +46,28 @@ nav a.aktiv { border-bottom: 3px solid var(--piros); }
   align-items: center;
   color: white;
   text-align: center;
-  height: 100%;
   overflow: hidden;
   background:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("kepek/mclaren_mcl38_formula_1_2024_4k-original.jpg") center / cover no-repeat;
+    url("kepek/mclaren_mcl38_formula_1_2024_4k-original.jpg") center 60% / cover no-repeat;
 }
 
 .hero-kicsi {
-  min-height: 300px;
-  padding: 70px 20px;
+  height: 640px;
+  padding: 0 20px;
 }
 
 .hero h1 {
   font-size: 5rem;
   font-style: italic;
-  animation: raCsuszik 1.2s ease-out;
+  animation: raCsuszik 1.2s ease-out, szinValtas 6s linear 1.2s infinite;
+}
+
+@keyframes szinValtas {
+  0%   { color: #ffffff; }
+  33%  { color: #e10600; }
+  66%  { color: #ff8000; }
+  100% { color: #ffffff; }
 }
 
 @keyframes raCsuszik {
