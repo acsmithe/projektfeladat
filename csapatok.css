@@ -344,6 +344,15 @@
   overflow: hidden;
   background: #ffffff;
   box-shadow: 0 4px 16px rgba(21, 21, 30, 0.08);
+  transition: transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.kartya.csapat-kartya:hover {
+  transform:  translateY(-6px);
+  box-shadow:
+    0 16px 32px rgba(21, 21, 30, 0.16),
+    0 0 0 1px var(--csapat-szin, var(--piros));
 }
 
 .csapat-fejlec {
@@ -417,6 +426,13 @@
   display: flex;
   align-items: center;
   box-shadow: none;
+  transition: transform 0.24s ease, background 0.24s ease;
+}
+
+.kartya.pilota:hover {
+  transform: translateY(-3px);
+  background: #ededf2;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 .pilota-adatok {
@@ -481,8 +497,12 @@
   z-index: 1;
   pointer-events: none;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  transition: transform 0.28s ease;
 }
 
+.kartya.pilota:hover .pilota-portre {
+  transform: scale(1.06);
+}
 
 .tech-adatok {
   margin-top: auto;
