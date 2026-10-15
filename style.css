@@ -25,9 +25,14 @@ header {
   flex-wrap: wrap;
 }
 
-.logo_kep img {
+.logo_kep img{
   height: 50px;
   margin: 10px 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo_kep img:hover {
+  transform: translateX(4px);
 }
 
 
