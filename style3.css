@@ -386,6 +386,46 @@ tbody tr:hover { background: #ffe5e3; transform: scale(1.01); }
   vertical-align: middle;
 }
 
+.palya-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.palya-kartya {
+  background: white;
+  border-top: 4px solid var(--piros);
+  border-radius: 6px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.palya-kartya:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.palya-kartya h3 {
+  margin-bottom: 8px;
+  color: var(--sotet);
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.kartya-adat {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  color: #444;
+}
+
+.kartya-adat strong {
+  color: var(--szurke);
+}
+
+
 footer {
   background: var(--sotet);
   color: #aaa;
