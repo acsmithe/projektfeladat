@@ -296,7 +296,72 @@ section.blokk { margin-bottom: 48px; }
   color: #ccc;
 }
 
-.tabla-keret { overflow-x: auto; margin-top: 16px; }
+.szuro-kontener input[type="radio"] {
+  display: none;
+}
+
+.szuro-gombok {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.szuro-gomb {
+  background: white;
+  color: var(--sotet);
+  border: 2px solid var(--sotet);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.szuro-gomb:hover {
+  background: var(--szurke);
+  color: white;
+  border-color: var(--szurke);
+}
+
+#szuro-mind:checked ~ .szuro-gombok label[for="szuro-mind"],
+#szuro-lezajlott:checked ~ .szuro-gombok label[for="szuro-lezajlott"],
+#szuro-hatralevo:checked ~ .szuro-gombok label[for="szuro-hatralevo"] {
+  background: var(--piros);
+  color: white;
+  border-color: var(--piros);
+}
+
+.naptar tbody tr {
+  display: table-row;
+}
+
+#szuro-lezajlott:checked ~ .tabla-keret .naptar tbody tr {
+  display: none;
+}
+#szuro-lezajlott:checked ~ .tabla-keret .naptar tbody tr.lezajlott {
+  display: table-row;
+}
+
+#szuro-hatralevo:checked ~ .tabla-keret .naptar tbody tr {
+  display: none;
+}
+#szuro-hatralevo:checked ~ .tabla-keret .naptar tbody tr.hatralevo {
+  display: table-row;
+}
+
+.tabla-keret {
+  overflow-x: visible;
+  margin-top: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  table-layout: auto;
+}
 
 table { width: 100%; border-collapse: collapse; background: white; }
 th { background: var(--sotet); color: white; text-align: left; }
