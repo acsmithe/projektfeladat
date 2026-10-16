@@ -578,3 +578,15 @@
   font-weight: 700;
   color: var(--sotet);
 }
+
+.tabla-gorgeto {
+  overflow-x: hidden;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(21, 21, 30, 0.08);
+}
+
+@media (max-width: 430px){
+  .tabla-gorgeto{
+    overflow-x: auto;
+  }
+}
