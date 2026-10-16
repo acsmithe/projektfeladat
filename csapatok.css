@@ -5,7 +5,6 @@ html {
 .hero.hero-csapatok {
   min-height: 520px;
   padding: 64px 24px 36px;
-  display: flex;
   justify-content: space-between;
   text-align: left;
   position: relative;
@@ -24,7 +23,6 @@ html {
   gap: 40px;
   align-items: center;
 }
-
 
 .hero-szoveg {
   flex: 1.2;
@@ -53,7 +51,7 @@ html {
 }
 
 .hero.hero-csapatok h1 span {
-  color: var(--piros)
+  color: var(--piros);
 }
 
 .hero.hero-csapatok p {
@@ -107,15 +105,12 @@ html {
   transform: translateY(-2px);
 }
 
-
 .hero-panel {
   flex: 0.8;
   min-width: 0;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.28);
   backdrop-filter: blur(8px);
-  align-items: center;
-  justify-content: center;
   padding: 20px;
   border-radius: 6px;
   animation: beusz 0.8s ease-out;
@@ -123,15 +118,10 @@ html {
 }
 
 .hero-panel:hover {
-
   transform: scale(1.05);
-
 }
 
 .panel-fejlec {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: #d6d6e0;
@@ -151,7 +141,6 @@ html {
   font-size: 1.1rem;
   margin-top: 10px;
 }
-
 
 .gorgetes-jelzo {
   margin-top: 32px;
@@ -183,7 +172,6 @@ html {
   box-shadow: 0 6px 20px rgba(15, 15, 22, 0.12);
 }
 
-
 .szalag-utvonal {
   display: flex;
   width: max-content;
@@ -199,7 +187,7 @@ html {
 .szalag-csoport {
   display: flex;
   align-items: center;
-  flex-shrink: 0; 
+  flex-shrink: 0;
   gap: 85px;
   padding-right: 85px;
 }
@@ -220,11 +208,11 @@ html {
   filter: grayscale(0%) drop-shadow(0 0 10px var(--glow, var(--piros)));
 }
 
-
 @keyframes szalag-uszas {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-25%);
   }
@@ -250,7 +238,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
@@ -259,7 +246,6 @@ html {
   box-shadow: 0 12px 28px rgba(21, 21, 30, 0.12);
 }
 
-
 .bento-7 {
   max-width: calc((100% - 20px) * 7 / 12);
 }
@@ -267,7 +253,6 @@ html {
 .bento-5 {
   max-width: calc((100% - 20px) * 5 / 12);
 }
-
 
 .bento-4 {
   max-width: calc((100% - 40px) / 3);
@@ -294,6 +279,8 @@ html {
 .bento-stat-sor {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
   gap: 12px;
   margin-top: 20px;
   padding-top: 18px;
@@ -306,14 +293,7 @@ html {
   min-width: 120px;
 }
 
-.bento-stat-sor {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .bento-stat-sor strong {
-
   font-size: 1.5rem;
   color: #ff4d47;
   font-style: italic;
@@ -359,6 +339,7 @@ html {
     transform: scaleX(0);
     filter: brightness(1.6);
   }
+
   100% {
     transform: scaleX(1);
     filter: brightness(1);
@@ -377,7 +358,6 @@ html {
   flex-direction: column;
   justify-content: center;
 }
-
 
 .csapat-logo-kartya {
   background-color: rgba(15, 15, 22, 0.85);
@@ -399,7 +379,6 @@ html {
   flex: 1 1 calc(50% - 12px);
   max-width: calc(50% - 12px);
   min-width: min(480px, 100%);
-  box-sizing: border-box;
   border: none;
   border-radius: 10px;
   padding: 24px;
@@ -408,7 +387,6 @@ html {
   gap: 18px;
   position: relative;
   overflow: hidden;
-
   background:
     radial-gradient(120% 130% at 0% 0%, color-mix(in srgb, var(--csapat-szin, var(--piros)) 15%, transparent) 0%, transparent 55%),
     radial-gradient(100% 100% at 100% 0%, color-mix(in srgb, var(--csapat-masodlagos, var(--sotet)) 12%, transparent) 0%, transparent 50%),
@@ -418,13 +396,9 @@ html {
     0 2px 6px -1px rgba(21, 21, 30, 0.04);
   transition:
     transform 0.4s ease,
-    box-shadow 0.4s ease,
-    opacity 0.35s ease,
-    filter 0.35s ease,
-    background 0.4s ease;
+    box-shadow 0.4s ease;
   z-index: 1;
 }
-
 
 .kartya.csapat-kartya::before {
   content: "";
@@ -443,7 +417,6 @@ html {
   z-index: 0;
 }
 
-
 .kartya.csapat-kartya:hover {
   transform: translateY(-8px) scale(1.008);
   background:
@@ -461,10 +434,6 @@ html {
   filter: blur(18px);
 }
 
-.kartya.csapat-kartya:hover::after {
-  left: 160%;
-}
-
 .kartya.csapat-kartya:hover .csapat-logo-kartya {
   transform: scale(1.08) rotate(-4deg);
   box-shadow: 0 4px 14px color-mix(in srgb, var(--csapat-szin, var(--piros)) 75%, transparent);
@@ -478,7 +447,6 @@ html {
   position: relative;
   z-index: 2;
 }
-
 
 .csapat-kartya .cimke {
   display: inline-block;
@@ -551,10 +519,8 @@ html {
   z-index: 2;
 }
 
-
 .kartya.pilota {
   flex: 1 1 calc(50% - 7px);
-  box-sizing: border-box;
   border: none;
   border-radius: 12px;
   background:
@@ -589,7 +555,6 @@ html {
   max-width: 56%;
 }
 
-
 .rajtszam {
   display: inline-block;
   font-size: 1.45rem;
@@ -599,8 +564,6 @@ html {
   background-clip: text;
   color: transparent;
   margin-bottom: 6px;
-  padding-bottom: 0;
-  border-bottom: none;
 }
 
 .pilota-nev-blokk {
@@ -652,7 +615,6 @@ html {
 
 .kartya.pilota:hover .pilota-portre {
   transform: scale(1.08) translateY(-2px);
-
 }
 
 .tech-adatok {
@@ -715,7 +677,6 @@ html {
 
 .tech-racs div {
   flex: 1 1 calc(50% - 8px);
-  box-sizing: border-box;
 }
 
 .tech-racs dt {
@@ -739,5 +700,57 @@ html {
 @media (max-width: 430px) {
   .tabla-gorgeto {
     overflow-x: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .kartya.csapat-kartya {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero-kontener {
+    flex-direction: column;
+  }
+
+  .bento-7,
+  .bento-5 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .bento-4 {
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+
+  .bento-info-csempe {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero.hero-csapatok {
+    padding: 40px 16px 28px;
+  }
+
+  .bento-4 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .bento-stat-sor>div {
+    flex: 1 1 100%;
+  }
+
+  .kartya.pilota {
+    flex: 1 1 100%;
+  }
+
+  .tech-racs>div {
+    flex: 1 1 100%;
   }
 }
