@@ -174,6 +174,62 @@ html {
   transform: translateY(3px);
 }
 
+.konstruktor-szalag {
+  position: relative;
+  background: linear-gradient(90deg, #111118 0%, #1a1a26 50%, #111118 100%);
+  padding: 18px 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(15, 15, 22, 0.12);
+}
+
+
+.szalag-utvonal {
+  display: flex;
+  width: max-content;
+  animation: szalag-uszas 38s linear infinite;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.konstruktor-szalag:hover .szalag-utvonal {
+  animation-play-state: paused;
+}
+
+.szalag-csoport {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; 
+  gap: 85px;
+  padding-right: 85px;
+}
+
+.szalag-csoport img {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.38;
+  filter: grayscale(30%);
+  transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+}
+
+.szalag-csoport img:hover {
+  opacity: 1;
+  transform: scale(1.15);
+  filter: grayscale(0%) drop-shadow(0 0 10px var(--glow, var(--piros)));
+}
+
+
+@keyframes szalag-uszas {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
 .csapatok-main {
   max-width: 1160px;
 }
@@ -294,6 +350,19 @@ html {
   display: block;
   height: 100%;
   border-radius: 999px;
+  transform-origin: left center;
+  animation: sav-feltoltes 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes sav-feltoltes {
+  0% {
+    transform: scaleX(0);
+    filter: brightness(1.6);
+  }
+  100% {
+    transform: scaleX(1);
+    filter: brightness(1);
+  }
 }
 
 .bento-info-csempe {
