@@ -367,8 +367,7 @@ section.blokk { margin-bottom: 48px; }
   display: table-row;
 }
 
-.tabla-keret { 
-  overflow-x: visible; 
+.tabla-keret {  
   margin-top: 16px; 
 }
 
@@ -382,6 +381,12 @@ th { background: var(--sotet); color: white; text-align: left; }
 th, td { padding: 12px; border-bottom: 1px solid #ddd; }
 tbody tr { transition: background 0.3s, transform 0.3s; }
 tbody tr:hover { background: #ffe5e3; transform: scale(1.01); }
+
+.tabla-gorgeto {
+  overflow-x: hidden;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(21, 21, 30, 0.08);
+}
 
 .naptar td:first-child { font-weight: bold; color: var(--piros); }
 .naptar td:nth-child(2) { white-space: nowrap; }
@@ -563,4 +568,10 @@ footer img {
   .hero h1 { font-size: 2.2rem; }
   .naptar { font-size: 0.85rem; }
   th, td { padding: 8px 6px; }
+}
+
+@media (max-width: 530px) {
+  .tabla-gorgeto {
+    overflow-x: auto;
+  }
 }

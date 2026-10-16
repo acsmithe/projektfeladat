@@ -176,7 +176,6 @@ html {
   display: flex;
   width: max-content;
   animation: szalag-uszas 38s linear infinite;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
@@ -691,18 +690,6 @@ html {
   color: var(--sotet);
 }
 
-.tabla-gorgeto {
-  overflow-x: hidden;
-  border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(21, 21, 30, 0.08);
-}
-
-@media (max-width: 430px) {
-  .tabla-gorgeto {
-    overflow-x: auto;
-  }
-}
-
 @media (max-width: 1024px) {
   .kartya.csapat-kartya {
     flex: 1 1 100%;
@@ -742,7 +729,7 @@ html {
     max-width: 100%;
   }
 
-  .bento-stat-sor>div {
+  .bento-stat-sor div {
     flex: 1 1 100%;
   }
 
@@ -750,7 +737,7 @@ html {
     flex: 1 1 100%;
   }
 
-  .tech-racs>div {
+  .tech-racs div {
     flex: 1 1 100%;
   }
 }
