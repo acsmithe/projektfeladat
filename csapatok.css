@@ -1,16 +1,10 @@
-.ragados-fejlec {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(21, 21, 30, 0.92);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+html {
+  scroll-behavior: smooth;
 }
 
 .hero.hero-csapatok {
   min-height: 520px;
   padding: 64px 24px 36px;
-  display: flex;
   justify-content: space-between;
   text-align: left;
   position: relative;
@@ -29,7 +23,6 @@
   gap: 40px;
   align-items: center;
 }
-
 
 .hero-szoveg {
   flex: 1.2;
@@ -58,7 +51,7 @@
 }
 
 .hero.hero-csapatok h1 span {
-  color: var(--piros)
+  color: var(--piros);
 }
 
 .hero.hero-csapatok p {
@@ -112,15 +105,12 @@
   transform: translateY(-2px);
 }
 
-
 .hero-panel {
   flex: 0.8;
   min-width: 0;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.28);
   backdrop-filter: blur(8px);
-  align-items: center;
-  justify-content: center;
   padding: 20px;
   border-radius: 6px;
   animation: beusz 0.8s ease-out;
@@ -128,15 +118,10 @@
 }
 
 .hero-panel:hover {
-
   transform: scale(1.05);
-
 }
 
 .panel-fejlec {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: #d6d6e0;
@@ -156,7 +141,6 @@
   font-size: 1.1rem;
   margin-top: 10px;
 }
-
 
 .gorgetes-jelzo {
   margin-top: 32px;
@@ -179,6 +163,60 @@
   transform: translateY(3px);
 }
 
+.konstruktor-szalag {
+  position: relative;
+  background: linear-gradient(90deg, #111118 0%, #1a1a26 50%, #111118 100%);
+  padding: 18px 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(15, 15, 22, 0.12);
+}
+
+.szalag-utvonal {
+  display: flex;
+  width: max-content;
+  animation: szalag-uszas 38s linear infinite;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.konstruktor-szalag:hover .szalag-utvonal {
+  animation-play-state: paused;
+}
+
+.szalag-csoport {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 85px;
+  padding-right: 85px;
+}
+
+.szalag-csoport img {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.38;
+  filter: grayscale(30%);
+  transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+}
+
+.szalag-csoport img:hover {
+  opacity: 1;
+  transform: scale(1.15);
+  filter: grayscale(0%) drop-shadow(0 0 10px var(--glow, var(--piros)));
+}
+
+@keyframes szalag-uszas {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
 .csapatok-main {
   max-width: 1160px;
 }
@@ -199,7 +237,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
@@ -207,7 +244,6 @@
   transform: translateY(-4px);
   box-shadow: 0 12px 28px rgba(21, 21, 30, 0.12);
 }
-
 
 .bento-7 {
   max-width: calc((100% - 20px) * 7 / 12);
@@ -217,13 +253,12 @@
   max-width: calc((100% - 20px) * 5 / 12);
 }
 
-
 .bento-4 {
   max-width: calc((100% - 40px) / 3);
 }
 
 .bento-sotet {
-  background: linear-gradient(135deg, #22222b 0%, #353546 100%);
+  background: linear-gradient(135deg, #15151e 0%, #252536 100%);
   color: #ffffff;
   border-top: 4px solid var(--piros);
 }
@@ -243,6 +278,8 @@
 .bento-stat-sor {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
   gap: 12px;
   margin-top: 20px;
   padding-top: 18px;
@@ -255,14 +292,7 @@
   min-width: 120px;
 }
 
-.bento-stat-sor {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .bento-stat-sor strong {
-
   font-size: 1.5rem;
   color: #ff4d47;
   font-style: italic;
@@ -299,6 +329,20 @@
   display: block;
   height: 100%;
   border-radius: 999px;
+  transform-origin: left center;
+  animation: sav-feltoltes 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes sav-feltoltes {
+  0% {
+    transform: scaleX(0);
+    filter: brightness(1.6);
+  }
+
+  100% {
+    transform: scaleX(1);
+    filter: brightness(1);
+  }
 }
 
 .bento-info-csempe {
@@ -314,12 +358,13 @@
   justify-content: center;
 }
 
-
 .csapat-logo-kartya {
-  background-color: rgba(0, 0, 0, 0.651);
-  padding: 5px;
+  background-color: rgba(15, 15, 22, 0.85);
+  padding: 6px;
   border-radius: 999px;
   height: 30px;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--csapat-szin, var(--piros)) 45%, transparent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .csapatok-grid {
@@ -333,8 +378,7 @@
   flex: 1 1 calc(50% - 12px);
   max-width: calc(50% - 12px);
   min-width: min(480px, 100%);
-  box-sizing: border-box;
-  border-top: 5px solid var(--csapat-szin, var(--piros));
+  border: none;
   border-radius: 10px;
   padding: 24px;
   display: flex;
@@ -342,17 +386,56 @@
   gap: 18px;
   position: relative;
   overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 4px 16px rgba(21, 21, 30, 0.08);
-  transition: transform 0.28s ease,
-    box-shadow 0.28s ease;
+  background:
+    radial-gradient(120% 130% at 0% 0%, color-mix(in srgb, var(--csapat-szin, var(--piros)) 15%, transparent) 0%, transparent 55%),
+    radial-gradient(100% 100% at 100% 0%, color-mix(in srgb, var(--csapat-masodlagos, var(--sotet)) 12%, transparent) 0%, transparent 50%),
+    #ffffff;
+  box-shadow:
+    0 8px 24px -4px rgba(21, 21, 30, 0.06),
+    0 2px 6px -1px rgba(21, 21, 30, 0.04);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+  z-index: 1;
+}
+
+.kartya.csapat-kartya::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, var(--csapat-szin, var(--piros)), var(--csapat-masodlagos, var(--sotet)));
+  opacity: 0.14;
+  border-radius: 36px;
+  transform: rotate(35deg);
+  filter: blur(22px);
+  transition: transform 0.6s ease, opacity 0.4s ease, filter 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .kartya.csapat-kartya:hover {
-  transform:  translateY(-6px);
+  transform: translateY(-8px) scale(1.008);
+  background:
+    radial-gradient(130% 140% at 0% 0%, color-mix(in srgb, var(--csapat-szin, var(--piros)) 22%, transparent) 0%, transparent 65%),
+    radial-gradient(110% 110% at 100% 0%, color-mix(in srgb, var(--csapat-masodlagos, var(--sotet)) 18%, transparent) 0%, transparent 60%),
+    #ffffff;
   box-shadow:
-    0 16px 32px rgba(21, 21, 30, 0.16),
-    0 0 0 1px var(--csapat-szin, var(--piros));
+    0 24px 48px -12px color-mix(in srgb, var(--csapat-szin, var(--piros)) 32%, rgba(21, 21, 30, 0.2)),
+    0 12px 24px -8px color-mix(in srgb, var(--csapat-masodlagos, var(--sotet)) 22%, transparent);
+}
+
+.kartya.csapat-kartya:hover::before {
+  transform: rotate(15deg) scale(1.45);
+  opacity: 0.28;
+  filter: blur(18px);
+}
+
+.kartya.csapat-kartya:hover .csapat-logo-kartya {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--csapat-szin, var(--piros)) 75%, transparent);
 }
 
 .csapat-fejlec {
@@ -360,14 +443,24 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 16px;
+  position: relative;
+  z-index: 2;
 }
 
 .csapat-kartya .cimke {
-  background: var(--sotet);
-  border-left: 3px solid var(--csapat-szin, var(--piros));
-  border-radius: 4px;
+  display: inline-block;
+  padding: 4px 10px;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg,
+      color-mix(in srgb, var(--csapat-szin, var(--piros)) 85%, #15151e),
+      color-mix(in srgb, var(--csapat-masodlagos, #15151e) 90%, #15151e));
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  box-shadow: 0 3px 10px color-mix(in srgb, var(--csapat-szin, var(--piros)) 35%, transparent);
 }
 
 .csapat-fejlec h3 {
@@ -375,7 +468,7 @@
   margin-bottom: 2px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .csapat-alnev {
@@ -386,10 +479,17 @@
 
 .konstruktori-cimek {
   text-align: right;
-  background: var(--vilagos);
-  padding: 6px 12px;
-  border-radius: 8px;
+  background: color-mix(in srgb, var(--csapat-szin, var(--piros)) 10%, var(--vilagos));
+  padding: 8px 14px;
+  border-radius: 12px;
   min-width: 78px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.kartya.csapat-kartya:hover .konstruktori-cimek {
+  background: color-mix(in srgb, var(--csapat-szin, var(--piros)) 18%, var(--vilagos));
+  transform: translateY(-2px);
 }
 
 .konstruktori-cimek .cim-szam {
@@ -397,7 +497,10 @@
   font-size: 1.55rem;
   line-height: 1.1;
   font-style: italic;
-  color: var(--sotet);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--sotet) 20%, var(--csapat-szin, var(--piros)) 100%);
+  background-clip: text;
+  color: transparent;
 }
 
 .konstruktori-cimek small {
@@ -411,28 +514,37 @@
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+  position: relative;
+  z-index: 2;
 }
 
 .kartya.pilota {
   flex: 1 1 calc(50% - 7px);
-  box-sizing: border-box;
-  background: var(--vilagos);
-  border-top: 3px solid var(--sotet);
-  border-left: 3px solid var(--csapat-szin, var(--piros));
+  border: none;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 92% 90%, color-mix(in srgb, var(--csapat-szin, var(--piros)) 22%, transparent) 0%, transparent 65%),
+    var(--vilagos);
   padding: 14px;
   position: relative;
   overflow: hidden;
   min-height: 112px;
   display: flex;
   align-items: center;
-  box-shadow: none;
-  transition: transform 0.24s ease, background 0.24s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .kartya.pilota:hover {
-  transform: translateY(-3px);
-  background: #ededf2;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  background:
+    radial-gradient(circle at 88% 85%, color-mix(in srgb, var(--csapat-szin, var(--piros)) 38%, transparent) 0%, transparent 72%),
+    #ededf4;
+  box-shadow:
+    0 10px 20px -6px color-mix(in srgb, var(--csapat-szin, var(--piros)) 28%, rgba(0, 0, 0, 0.1));
 }
 
 .pilota-adatok {
@@ -444,13 +556,13 @@
 
 .rajtszam {
   display: inline-block;
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: 1.45rem;
+  font-weight: 800;
   font-style: italic;
-  color: var(--sotet);
+  background: linear-gradient(135deg, var(--sotet) 15%, var(--csapat-szin, var(--piros)) 100%);
+  background-clip: text;
+  color: transparent;
   margin-bottom: 6px;
-  padding-bottom: 2px;
-  border-bottom: 2px solid var(--csapat-szin, var(--piros));
 }
 
 .pilota-nev-blokk {
@@ -466,8 +578,8 @@
 
 .pilota-nev-blokk .fi {
   font-size: 1.25rem;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 
 .pilota-nev-blokk strong {
@@ -496,12 +608,12 @@
   object-position: bottom right;
   z-index: 1;
   pointer-events: none;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-  transition: transform 0.28s ease;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.18));
+  transition: transform 0.35s ease;
 }
 
 .kartya.pilota:hover .pilota-portre {
-  transform: scale(1.06);
+  transform: scale(1.08) translateY(-2px);
 }
 
 .tech-adatok {
@@ -520,10 +632,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 6px 4px;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: color 0.2s ease;
 }
-
 
 .tech-adatok summary::after {
   content: "+";
@@ -533,38 +644,38 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--vilagos);
-  color: var(--piros);
+  background: color-mix(in srgb, var(--csapat-szin, var(--piros)) 14%, var(--vilagos));
+  color: var(--csapat-szin, var(--piros));
   font-weight: 700;
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+  transition: transform 0.3s ease, background 0.25s ease, color 0.25s ease;
 }
 
 .tech-adatok[open] summary::after {
   content: "−";
-  background: var(--piros);
+  background: var(--csapat-szin, var(--piros));
   color: #ffffff;
   transform: rotate(180deg);
 }
 
 .tech-adatok summary:hover {
-  color: var(--piros);
+  color: var(--csapat-szin, var(--piros));
 }
-
 
 .tech-racs {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 16px;
   margin-top: 12px;
-  padding: 12px;
-  background: var(--vilagos);
-  border-radius: 6px;
+  padding: 14px;
+  background: linear-gradient(135deg,
+      color-mix(in srgb, var(--csapat-szin, var(--piros)) 7%, var(--vilagos)),
+      var(--vilagos));
+  border-radius: 10px;
   font-size: 0.85rem;
 }
 
 .tech-racs div {
   flex: 1 1 calc(50% - 8px);
-  box-sizing: border-box;
 }
 
 .tech-racs dt {
@@ -577,4 +688,56 @@
 .tech-racs dd {
   font-weight: 700;
   color: var(--sotet);
+}
+
+@media (max-width: 1024px) {
+  .kartya.csapat-kartya {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero-kontener {
+    flex-direction: column;
+  }
+
+  .bento-7,
+  .bento-5 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .bento-4 {
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+
+  .bento-info-csempe {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero.hero-csapatok {
+    padding: 40px 16px 28px;
+  }
+
+  .bento-4 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .bento-stat-sor div {
+    flex: 1 1 100%;
+  }
+
+  .kartya.pilota {
+    flex: 1 1 100%;
+  }
+
+  .tech-racs div {
+    flex: 1 1 100%;
+  }
 }
