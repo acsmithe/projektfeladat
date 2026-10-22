@@ -969,7 +969,6 @@ section.blokk {
   height: 180px;
   overflow: hidden;
   background: linear-gradient(135deg, var(--sotet), var(--szurke));
-  /* ha hiányzik a kép */
 }
 
 .id-kep img {
